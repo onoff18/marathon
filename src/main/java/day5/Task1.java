@@ -38,27 +38,22 @@ class Car {
     }
 
     public String getColor() {
-
         return color;
     }
 
     public void setModel (String model) {
-
         this.model = model;
     }
 
     public String getModel() {
-
         return model;
     }
 
     public void setYearOfManufacture(int yearOfManufacture) {
-
         this.yearOfManufacture = yearOfManufacture;
     }
 
     public int getYearOfManufacture() {
-
         return yearOfManufacture;
     }
 }
