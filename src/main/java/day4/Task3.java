@@ -22,9 +22,9 @@ public class Task3 {
             for (int z = 0; z < arr[i].length; z++){
                 arr[i][z] = (int) (Math.random() * 50);
                 helper += arr[i][z];
-                if (maximumLineAmount < helper) {
+                if (maximumLineAmount <= helper) {
                     maximumLineAmount = helper;
-                    lineNumberWithMaximumAmount = i + 1;
+                    lineNumberWithMaximumAmount = i;
                 }
             }
         }
