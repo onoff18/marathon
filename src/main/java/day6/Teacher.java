@@ -25,9 +25,24 @@ public class Teacher {
         int min = 2;
         int max = 5;
         int rangeRandom = max - min;
+        String grade = "";
         int random = (int) (Math.random() * ++rangeRandom) + min;
-        System.out.printf("Преподаватель %s оценил студента с именем %s по предмету %s на оценку %d.\n",
-                name, studentName, schoolSubject, random);
+
+        switch (random){
+            case 2 :
+                grade = "неудовлетворительно";
+                break;
+            case 3 :
+                grade = "удовлетворительно";
+                break;
+            case 4 :
+                grade = "хорошо";
+                break;
+            case 5 :
+                grade = "отлично";
+        }
+        System.out.printf("Преподаватель %s оценил студента с именем %s по предмету %s на оценку %s.\n",
+                name, studentName, schoolSubject, grade);
     }
 
 }
