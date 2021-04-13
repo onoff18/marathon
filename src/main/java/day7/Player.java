@@ -3,9 +3,9 @@ package day7;
 public class Player {
 
     private int stamina;
-    private static final int MAX_STAMINA = 100;
-    private static final int MIN_STAMINA = 0;
-    private static final int PLACES = 6;
+    public static final int MAX_STAMINA = 100;
+    public static final int MIN_STAMINA = 0;
+    public static final int PLACES = 6;
 
     private static int countPlayers;
 
@@ -20,8 +20,6 @@ public class Player {
     public Player(int stamina) {
         if (countPlayers < 6) {
             countPlayers++;
-        } else if (countPlayers > 6) {
-            countPlayers--;
         }
         this.stamina = stamina;
     }
@@ -47,11 +45,11 @@ public class Player {
     public static String setEndingPlaces(int countPlayers) {
 
         String ending = "";
-        if (PLACES - countPlayers == 0 || PLACES - countPlayers >= 5 && PLACES - countPlayers <= 9) {
+        if ((PLACES - countPlayers) % 10 == 0 || (PLACES - countPlayers) % 10 >= 5) {
             ending = "";
-        } else if (PLACES - countPlayers >= 2 && PLACES - countPlayers <= 4) {
+        } else if ((PLACES - countPlayers) % 10 >= 2 && (PLACES - countPlayers) % 10 <= 4) {
             ending = "а";
-        } else if (PLACES - countPlayers == 1) {
+        } else if ((PLACES - countPlayers) % 10 == 1) {
             ending = "о";
         }
         return ending;
@@ -60,7 +58,7 @@ public class Player {
     public static String setEndingFree(int countPlayers) {
 
         String ending;
-        if (PLACES - countPlayers == 1) {
+        if ((PLACES - countPlayers) % 10 == 1) {
             ending = "оe";
         } else {
             ending = "ых";
