@@ -3,16 +3,12 @@ package day8;
 public class Task1 {
     public static void main(String[] args) {
 
-        int arraySize = 20001;
-
         long start = System.currentTimeMillis();
 
-        String[] strArr = new String[arraySize];
         String s = "";
 
-        for (int i = 0; i < strArr.length; i++) {
-            strArr[i] = Integer.toString(i) + " ";
-            s = s + strArr[i];
+        for (int i = 0; i < 20001; i++) {
+            s += Integer.toString(i) + " ";
         }
 
         System.out.println(s);
@@ -26,7 +22,7 @@ public class Task1 {
 
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < arraySize; i++) {
+        for (int i = 0; i < 20001; i++) {
             sb.append(i).append(" ");
         }
         System.out.println(sb);
