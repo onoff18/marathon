@@ -1,15 +1,5 @@
 package day6;
 
-/*
-Создать класс Автомобиль (англ. Car) с полями “Год выпуска”, “Цвет”, “Модель”.
-Создать get и set методы для каждого поля.
-Создать экземпляр класса Автомобиль.
-Задать значение для каждого поля, используя set методы.
-Вывести в консоль значение каждого из полей, используя get методы.
-Созданный вами класс должен отвечать принципам инкапсуляции.
-*/
-
-
 public class Car {
 
     private String color;
@@ -45,14 +35,8 @@ public class Car {
     }
 
     public int yearDifference (int inputYear) {
-
-        int differenceYearValue = 0;
-
-        if (inputYear > yearOfManufacture){
-            differenceYearValue = 0;
-        } else {
-            differenceYearValue = yearOfManufacture - inputYear;
-        }
-        return differenceYearValue;
+        int differenceBetweenYears = Math.abs(yearOfManufacture - inputYear);
+        return differenceBetweenYears;
     }
+
 }
