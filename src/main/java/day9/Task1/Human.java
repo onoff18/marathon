@@ -4,10 +4,10 @@ public class Human {
 
     private String name;
 
-    public Human (){
+    public Human() {
     }
 
-    public Human (String name) {
+    public Human(String name) {
         this.name = name;
     }
 
@@ -15,7 +15,7 @@ public class Human {
         return name;
     }
 
-    public void printInfo () {
-        System.out.printf("Этот человек с именем %s\n", name);
+    public void printInfo() {
+        System.out.printf("Этот человек с именем %s\n", getName());
     }
 }
