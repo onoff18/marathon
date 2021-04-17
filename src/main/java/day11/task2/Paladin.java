@@ -1,11 +1,13 @@
 package day11.task2;
 
+import day11.task2.Interface.Healer;
+import day11.task2.Interface.PhysAttack;
+import day11.task2.Model.Hero;
+
 public class Paladin extends Hero implements Healer, PhysAttack {
 
-    private static final String TYPE = "Paladin";
     private int healHimself;
     private int healTeammate;
-
 
     public Paladin () {
         setPhysAtt(15);
@@ -14,10 +16,7 @@ public class Paladin extends Hero implements Healer, PhysAttack {
         setMagicDef(20);
         this.healHimself = 25;
         this.healTeammate = 10;
-    }
-
-    public static String getTYPE() {
-        return TYPE;
+        setType("Paladin");
     }
 
     public int getHealHimself() {
@@ -45,19 +44,7 @@ public class Paladin extends Hero implements Healer, PhysAttack {
     }
 
     @Override
-    public void physicalAttack(Hero hero) {
-        int damage = (int) (this.getPhysAtt() - (this.getPhysAtt() * hero.getPhysDef() / 100));
-        hero.setHealth(hero.getHealth() - damage);
-
-        if (hero.getHealth() < 0) {
-            hero.setHealth(0);
-        }
-    }
-
-    @Override
     public String toString() {
-        return "Type of fighter - " + getTYPE() + "\nPhysical attack power - " + getPhysAtt() + "\nMagical attack power - " +
-                + getMagicAtt() + "\nPhysical damage protection - " + getPhysDef() + "%\nMagical damage protection - " +
-                + getMagicDef() + "%\nCure yourself - " + getHealHimself() + "\nCure teammate - " + getHealTeammate() + "\n";
+        return super.toString() + getHealHimself() + "\nCure teammate - " + getHealTeammate() + "\n";
     }
 }

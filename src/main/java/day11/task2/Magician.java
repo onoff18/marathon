@@ -1,28 +1,17 @@
 package day11.task2;
 
-public class Magician extends Hero implements MagicAttack, PhysAttack {
+import day11.task2.Interface.MagicAttack;
+import day11.task2.Interface.PhysAttack;
+import day11.task2.Model.Hero;
 
-    private static final String TYPE = "Magician";
+public class Magician extends Hero implements MagicAttack, PhysAttack {
 
     public Magician () {
         setPhysAtt(5);
         setMagicAtt(20);
         setPhysDef(0);
         setMagicDef(80);
-    }
-
-    public static String getTYPE() {
-        return TYPE;
-    }
-
-    @Override
-    public void physicalAttack(Hero hero) {
-        int damage = (int) (this.getPhysAtt() - (this.getPhysAtt() * hero.getPhysDef() / 100));
-        hero.setHealth(hero.getHealth() - damage);
-
-        if (hero.getHealth() < 0) {
-            hero.setHealth(0);
-        }
+        setType("Magician");
     }
 
     @Override
@@ -30,15 +19,9 @@ public class Magician extends Hero implements MagicAttack, PhysAttack {
         int damage = (int) (this.getMagicAtt() - (this.getMagicAtt() * hero.getMagicDef() / 100));
         hero.setHealth(hero.getHealth() - damage);
 
-        if (hero.getHealth() < 0) {
-            hero.setHealth(0);
+        if (hero.getHealth() < hero.getMIN_HEALTH()) {
+            hero.setHealth(hero.getMIN_HEALTH());
         }
     }
-
-    @Override
-    public String toString() {
-        return "Type of fighter - " + getTYPE() + "\nPhysical attack power - " + getPhysAtt() + "\nMagical attack power - " +
-                + getMagicAtt() + "\nPhysical damage protection - " + getPhysDef() + "%\nMagical damage protection - " +
-                + getMagicDef() + "%";
-    }
 }
+
